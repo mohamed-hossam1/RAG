@@ -13,3 +13,9 @@ async def chat(request: ChatRequest):
         raise HTTPException(status_code=400, detail="Messages list cannot be empty.")
     
     return await generate_chat_response(request)
+
+@router.get("/", response_model=ChatResponse)
+async def root():
+    return {
+        "message": "Welcome to the Chatbot API!"
+    }

@@ -18,7 +18,7 @@ export const MessageList: React.FC<MessageListProps> = ({ messages, isLoading })
   return (
     <div className="flex-1 overflow-y-auto px-4 py-4 space-y-4 max-h-[60vh] min-h-[350px] bg-zinc-950/30 border border-zinc-800 rounded-xl">
       {messages.length <= 1 ? (
-        <div className="flex flex-col items-center justify-center h-full text-center p-6 text-zinc-500">
+        <div className="flex flex-col items-center justify-center h-[96%] text-center p-6 text-zinc-500">
           <span className="text-4xl mb-3">💬</span>
           <p className="text-sm font-semibold">Start a new conversation</p>
           <p className="text-xs text-zinc-600 mt-1 max-w-sm">
@@ -31,7 +31,6 @@ export const MessageList: React.FC<MessageListProps> = ({ messages, isLoading })
         ))
       )}
 
-      {/* Typing Indicator */}
       {isLoading && (
         <div className="flex justify-start mb-4">
           <div className="bg-zinc-900 border border-zinc-850 rounded-2xl rounded-bl-none px-4 py-3 text-zinc-300 shadow-sm max-w-xs">

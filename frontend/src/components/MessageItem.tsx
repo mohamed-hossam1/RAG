@@ -20,7 +20,6 @@ export const MessageItem: React.FC<MessageItemProps> = ({ message }) => {
     );
   }
 
-  // Parse reasoning / thinking blocks: <think>content</think>
   let thinkingContent = "";
   let mainContent = message.content;
 
@@ -41,12 +40,10 @@ export const MessageItem: React.FC<MessageItemProps> = ({ message }) => {
             : "bg-zinc-900 border-zinc-800 text-zinc-100 rounded-bl-none"
         }`}
       >
-        {/* Username/Label */}
         <div className="text-[10px] uppercase font-mono tracking-widest text-zinc-400 mb-1">
           {isUser ? "You" : "Assistant"}
         </div>
 
-        {/* Thinking Accordion (For reasoning models) */}
         {!isUser && thinkingContent && (
           <div className="mb-3 bg-zinc-950/70 rounded-lg border border-zinc-800/80 overflow-hidden">
             <button
@@ -68,7 +65,6 @@ export const MessageItem: React.FC<MessageItemProps> = ({ message }) => {
           </div>
         )}
 
-        {/* Message Content */}
         <div className="text-sm leading-relaxed whitespace-pre-wrap select-text">
           {mainContent || (thinkingContent && !mainContent ? "Thinking complete." : "")}
         </div>
