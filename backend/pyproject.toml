@@ -9,4 +9,6 @@ dependencies = [
     "openai>=2.45.0",
     "python-dotenv>=1.2.2",
     "uvicorn>=0.51.0",
+    "qdrant-client>=1.13.0",
 ]
+

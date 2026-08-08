@@ -9,3 +9,8 @@ wheels/
 # Virtual environments
 .venv
 .env
+
+*.md
+!README.md
+
+qdrant_storage
